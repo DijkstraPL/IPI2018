@@ -25,6 +25,20 @@ namespace LibraryWeb.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             });
         }
+        
+        [HttpGet("[action]")]
+        public IEnumerable<LibraryContainer> Library()
+        {
+            var rng = new Random();
+            return Enumerable.Range(1, 5).Select(index => new LibraryContainer
+            {
+                Title = Summaries[rng.Next(Summaries.Length)],
+                Year = (DateTime.Now.Year - index).ToString("d"),
+                Media = "Book",
+                Author = Summaries[rng.Next(Summaries.Length)],
+                State = true,
+            });
+        }
 
         public class WeatherForecast
         {
@@ -39,6 +53,16 @@ namespace LibraryWeb.Controllers
                     return 32 + (int)(TemperatureC / 0.5556);
                 }
             }
+        }
+
+        public class LibraryContainer
+        {
+            public string Title { get; set; }
+            public string Year { get; set; }
+            public string Media { get; set; }
+            public string Author { get; set; }
+            public bool State { get; set; }
+
         }
     }
 }
