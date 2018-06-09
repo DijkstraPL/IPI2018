@@ -7,7 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-//sprawdzam czy repozytorium dziala
+
 namespace LibraryWeb
 {
     public class Program
