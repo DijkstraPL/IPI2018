@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using LibraryWeb.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryWeb
 {
@@ -17,12 +19,20 @@ namespace LibraryWeb
             Configuration = configuration;
         }
 
+        public void AddDbContext()
+        {
+
+        }
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=LibraryWeb.Model;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<LibraryContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

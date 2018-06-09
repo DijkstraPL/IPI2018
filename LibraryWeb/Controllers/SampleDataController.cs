@@ -40,6 +40,16 @@ namespace LibraryWeb.Controllers
             });
         }
 
+        public class LibraryContainer
+        {
+            public string Title { get; set; }
+            public string Year { get; set; }
+            public string Media { get; set; }
+            public string Author { get; set; }
+            public bool State { get; set; }
+
+        }
+
         public class WeatherForecast
         {
             public string DateFormatted { get; set; }
@@ -53,16 +63,6 @@ namespace LibraryWeb.Controllers
                     return 32 + (int)(TemperatureC / 0.5556);
                 }
             }
-        }
-
-        public class LibraryContainer
-        {
-            public string Title { get; set; }
-            public string Year { get; set; }
-            public string Media { get; set; }
-            public string Author { get; set; }
-            public bool State { get; set; }
-
         }
     }
 }
