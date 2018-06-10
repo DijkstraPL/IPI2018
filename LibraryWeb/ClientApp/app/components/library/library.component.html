@@ -51,8 +51,8 @@
             <td>{{ element.media }}</td>
             <td>{{ element.author }}</td>
             <td>{{ element.state }}</td>
-            <td><button class="btn-info  btn-danger">Show</button></td>
-            <td><button class="btn-info  btn-danger">Borrow</button></td>
+            <td><button (click)="show(element)" class="btn-info  btn-danger">Show</button></td>
+            <td><button (click)="borrow()" class="btn-info  btn-danger">Borrow</button></td>
         </tr>
     </tbody>
 </table>

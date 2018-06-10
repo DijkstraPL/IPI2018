@@ -15,6 +15,15 @@ export class LibraryComponent {
             this.library = result.json() as Library[];
         }, error => console.error(error));
     }
+    public show(element: Library) {
+        window.open('api/Details')
+        
+    }
+    public borrow() {
+
+        alert("bbb");
+    }
+
 }
 
 interface Library {
@@ -24,3 +33,4 @@ interface Library {
     author: string;
     state: boolean;
 }
+
